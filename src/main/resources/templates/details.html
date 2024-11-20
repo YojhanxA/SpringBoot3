@@ -13,5 +13,19 @@
       <li th:if="${user.email}" th:text="${user.email}"></li>
       <li th:if="${user.email ==null}" th:text="${'no tiene emal'}"></li>
     </ul>
+    <a th:href="@{/list}">ver listado</a><br />
+    <a th:href="@{'/api/params/foo?message=' + ${title}}">ver mensage</a><br />
+    <a th:href="@{/api/params/foo?message=hola que tal festival}"
+      >ver mensage 2</a
+    ><br />
+    <a th:href="@{/api/params/foo(message='hola que tal festival')}"
+      >ver mensage 3</a
+    ><br />
+    <a th:href="@{/api/params/bar(text='hola que tal festival', code=27)}"
+      >ver mix2 param </a
+    ><br />
+
+    <a th:href="@{/api/var/baz/'hola prueba'}">ver pathVariable </a>
+    <a th:href="@{'/api/var/baz/' + ${title}}">ver pathVariable2 </a>
   </body>
 </html>
